@@ -326,7 +326,7 @@ body::after {
    Doc pages — starlit manual styling (readability first)
    ============================================================ */
 
-/* Section headings with a star ornament + gradient divider */
+/* Section headings with a gradient divider */
 .vp-doc h2 {
   position: relative;
   border-top: 1px solid transparent;
@@ -338,18 +338,6 @@ body::after {
     )
     1;
   padding-top: 28px;
-}
-
-.vp-doc h2::after {
-  content: '✦';
-  position: absolute;
-  top: 18px;
-  left: 0;
-  font-size: 0.7em;
-  color: var(--vp-c-brand-1);
-  text-shadow: 0 0 12px rgb(138 99 255 / 60%);
-  opacity: 0.9;
-  pointer-events: none;
 }
 
 .vp-doc h2 > * {
