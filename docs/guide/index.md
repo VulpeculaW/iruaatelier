@@ -5,6 +5,7 @@ IruaAtelier의 VRChat 기믹 공식 설명서입니다. 별빛을 테마로 한 
 ## 기믹 라인업
 
 - [Starlight of Irua | イルアの星光](/guide/starlight-of-irua) — 손끝으로 의상·토글·파티클을 다루는 Object Menu System
+- [Nebula Staff | 星雲の杖](/guide/nebula-staff) — Action Menu 없이 손동작으로 다루는 마법의 지팡이 파티클
 
 ## 함께 보기
 

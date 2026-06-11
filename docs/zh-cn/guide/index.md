@@ -5,6 +5,7 @@ IruaAtelier 的 VRChat 机关官方文档。以星光为主题、用指尖操控
 ## 机关列表
 
 - [Starlight of Irua | イルアの星光](/zh-cn/guide/starlight-of-irua) — 通过手部操作切换服装、开关与粒子的 Object Menu System
+- [Nebula Staff | 星雲の杖](/zh-cn/guide/nebula-staff) — 无需 Action Menu、通过手部动作操控的魔法杖粒子机关
 
 ## 相关链接
 
