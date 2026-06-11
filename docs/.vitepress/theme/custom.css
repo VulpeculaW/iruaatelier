@@ -1,0 +1,562 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&family=Sora:wght@500;600;700;800&display=swap');
+
+/* ============================================================
+   IruaAtelier — Starlight theme
+   Main: purple (#8a63ff) · Accent: blue (#4d8dff)
+   ============================================================ */
+
+:root {
+  color-scheme: dark;
+  --vp-font-family-base: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
+  --vp-font-family-mono: 'SFMono-Regular', ui-monospace, 'Menlo', monospace;
+
+  --vp-c-bg: #070912;
+  --vp-c-bg-alt: #0b0f1e;
+  --vp-c-bg-soft: #111630;
+  --vp-c-bg-elv: #151b34;
+  --vp-c-text-1: #eef2ff;
+  --vp-c-text-2: #b6c2ec;
+  --vp-c-divider: rgb(138 99 255 / 26%);
+  --vp-button-alt-bg: rgb(255 255 255 / 10%);
+  --vp-button-alt-hover-bg: rgb(255 255 255 / 16%);
+  --vp-button-alt-active-bg: rgb(255 255 255 / 20%);
+  --vp-button-alt-text: #eef2ff;
+  --vp-button-alt-border: rgb(255 255 255 / 14%);
+
+  --vp-c-brand-1: #a58cff;
+  --vp-c-brand-2: #8a63ff;
+  --vp-c-brand-3: #6844ff;
+  --vp-c-brand-soft: rgb(138 99 255 / 14%);
+  --vp-c-indigo-1: #3f7df0;
+  --vp-c-indigo-2: #3979f2;
+  --vp-c-indigo-3: #2d66d8;
+
+  --irua-accent: #4d8dff;
+  --star-a: rgb(255 255 255 / 92%);
+  --star-b: rgb(190 214 255 / 88%);
+  --star-c: rgb(206 190 255 / 82%);
+  --aurora-1: rgb(120 80 255 / 9%);
+  --aurora-2: rgb(60 110 255 / 7%);
+
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(120deg, #8a63ff 10%, #6f8bff 50%, #4d8dff 90%);
+  --vp-home-hero-image-background-image: none;
+  --vp-home-hero-image-filter: none;
+}
+
+.dark {
+  --vp-c-bg: #070912;
+  --vp-c-bg-alt: #0b0f1e;
+  --vp-c-bg-soft: #111630;
+  --vp-c-bg-elv: #151b34;
+  --vp-c-text-1: #eef2ff;
+  --vp-c-text-2: #b6c2ec;
+  --vp-c-divider: rgb(138 99 255 / 26%);
+  --vp-c-brand-1: #a58cff;
+  --vp-c-brand-2: #8a63ff;
+  --vp-c-brand-3: #6844ff;
+
+  --star-a: rgb(255 255 255 / 92%);
+  --star-b: rgb(190 214 255 / 88%);
+  --star-c: rgb(206 190 255 / 82%);
+  --aurora-1: rgb(120 80 255 / 9%);
+  --aurora-2: rgb(60 110 255 / 7%);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  background:
+    radial-gradient(ellipse 110% 40% at 50% -5%, rgb(110 70 240 / 11%), transparent 65%),
+    radial-gradient(ellipse 60% 25% at 15% 20%, rgb(90 55 220 / 6%), transparent 60%),
+    radial-gradient(ellipse 50% 20% at 85% 15%, rgb(50 90 255 / 5%), transparent 60%),
+    var(--vp-c-bg);
+}
+
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: min(60vh, 540px);
+  pointer-events: none;
+  z-index: 0;
+  background-repeat: repeat;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 30%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 30%, transparent 100%);
+}
+
+/* Starfield — dense field confined to the top, fading down */
+body::before {
+  background-image:
+    radial-gradient(1px 1px at 15% 18%, var(--star-a) 60%, transparent),
+    radial-gradient(1px 1px at 68% 38%, var(--star-b) 60%, transparent),
+    radial-gradient(1.2px 1.2px at 44% 72%, var(--star-c) 60%, transparent),
+    radial-gradient(1px 1px at 86% 14%, var(--star-a) 60%, transparent),
+    radial-gradient(1.1px 1.1px at 28% 88%, var(--star-b) 60%, transparent),
+    radial-gradient(1.6px 1.6px at 8% 52%, var(--star-a) 55%, transparent),
+    radial-gradient(1.8px 1.8px at 78% 64%, var(--star-c) 55%, transparent),
+    radial-gradient(2px 2px at 54% 22%, var(--star-a) 50%, transparent),
+    radial-gradient(2.2px 2.2px at 36% 44%, var(--star-b) 50%, transparent),
+    radial-gradient(0.8px 0.8px at 92% 82%, var(--star-c) 60%, transparent),
+    radial-gradient(0.8px 0.8px at 4% 30%, var(--star-b) 60%, transparent),
+    radial-gradient(0.8px 0.8px at 62% 92%, var(--star-a) 60%, transparent),
+    radial-gradient(1px 1px at 22% 6%, var(--star-a) 60%, transparent),
+    radial-gradient(1px 1px at 50% 58%, var(--star-b) 60%, transparent),
+    radial-gradient(1.3px 1.3px at 72% 10%, var(--star-c) 55%, transparent),
+    radial-gradient(0.9px 0.9px at 38% 26%, var(--star-a) 60%, transparent);
+  background-size:
+    160px 160px, 180px 180px, 200px 200px, 210px 210px, 230px 230px,
+    320px 320px, 340px 340px, 380px 380px, 420px 420px,
+    140px 140px, 150px 150px, 170px 170px,
+    190px 190px, 220px 220px, 260px 260px, 130px 130px;
+  opacity: 0.4;
+}
+
+/* Aurora glow confined to the top — gently drifts */
+body::after {
+  display: block;
+  background-image:
+    radial-gradient(ellipse 70% 70% at 25% 8%, rgb(120 80 255 / 16%), transparent 62%),
+    radial-gradient(ellipse 65% 65% at 80% 12%, rgb(50 110 255 / 12%), transparent 62%),
+    linear-gradient(120deg, transparent 30%, rgb(214 206 255 / 8%) 46%, rgb(255 255 255 / 5%) 50%, rgb(196 214 255 / 8%) 54%, transparent 70%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  animation: irua-aurora-drift 24s ease-in-out infinite alternate;
+}
+
+@keyframes irua-aurora-drift {
+  0% {
+    transform: translate3d(-2%, 0, 0) scale(1.02);
+    opacity: 0.85;
+  }
+  100% {
+    transform: translate3d(2%, 1.5%, 0) scale(1.08);
+    opacity: 1;
+  }
+}
+
+#app {
+  position: relative;
+  z-index: 1;
+}
+
+.VPNavBarTitle .title,
+.VPHero .name,
+.VPHero .text,
+.VPFeature .title {
+  font-family: 'Sora', 'Noto Sans KR', sans-serif;
+  letter-spacing: -0.01em;
+}
+
+.VPNavBar:not(.top) {
+  background-color: rgb(8 11 24 / 88%);
+}
+
+.dark .VPNavBar:not(.top) {
+  background-color: rgb(8 11 24 / 72%);
+}
+
+.VPHome {
+  position: relative;
+}
+
+.VPHome::before {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.VPHome::before {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: min(52vh, 480px);
+  background:
+    radial-gradient(ellipse 80% 60% at 50% -10%, rgb(110 70 240 / 14%), transparent 70%),
+    radial-gradient(ellipse 40% 30% at 20% 5%, rgb(90 55 220 / 8%), transparent 55%),
+    radial-gradient(ellipse 40% 30% at 80% 5%, rgb(50 90 255 / 7%), transparent 55%);
+}
+
+.VPHome .container,
+.VPHero {
+  position: relative;
+  z-index: 1;
+}
+
+.VPHero .VPImage {
+  opacity: 0.98;
+  animation: irua-float 6s ease-in-out infinite;
+  filter: drop-shadow(0 12px 40px rgb(138 99 255 / 35%))
+    drop-shadow(0 0 60px rgb(77 141 255 / 22%));
+  will-change: transform;
+}
+
+.VPHero .image-container {
+  position: relative;
+}
+
+/* Soft glowing halo behind the hero logo */
+.VPHero .image-container::after {
+  content: '';
+  position: absolute;
+  inset: -8%;
+  z-index: -1;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 50% 45%,
+    rgb(138 99 255 / 28%),
+    rgb(77 141 255 / 12%) 45%,
+    transparent 70%
+  );
+  filter: blur(14px);
+  animation: irua-halo-pulse 7s ease-in-out infinite;
+}
+
+@keyframes irua-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes irua-halo-pulse {
+  0%,
+  100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+}
+
+/* Shimmering gradient on the hero name */
+.VPHero .name .clip {
+  background-image: linear-gradient(
+    120deg,
+    #8a63ff 0%,
+    #a58cff 25%,
+    #d6ceff 40%,
+    #6f8bff 60%,
+    #4d8dff 80%,
+    #8a63ff 100%
+  );
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: irua-shimmer 7s linear infinite;
+}
+
+@keyframes irua-shimmer {
+  to {
+    background-position: 220% center;
+  }
+}
+
+.VPHero .text {
+  text-shadow: 0 0 30px rgb(138 99 255 / 18%);
+}
+
+.VPFeature {
+  border: 1px solid rgb(138 99 255 / 20%);
+  background: linear-gradient(160deg, rgb(255 255 255 / 80%), rgb(245 244 255 / 55%));
+  transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.dark .VPFeature {
+  background: linear-gradient(160deg, rgb(20 25 52 / 85%), rgb(12 16 34 / 72%));
+}
+
+.VPFeature:hover {
+  transform: translateY(-5px);
+  border-color: rgb(77 141 255 / 55%);
+  box-shadow: 0 16px 40px rgb(77 141 255 / 22%), 0 0 0 1px rgb(138 99 255 / 18%);
+}
+
+.VPFeature .icon {
+  background: linear-gradient(135deg, rgb(138 99 255 / 18%), rgb(77 141 255 / 18%)) !important;
+  border-radius: 12px;
+}
+
+.VPButton.brand {
+  background: linear-gradient(130deg, #8a63ff, #4d8dff);
+  border: none;
+  box-shadow: 0 4px 14px rgb(110 90 255 / 24%);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.VPButton.brand:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgb(110 90 255 / 30%);
+}
+
+.VPButton.alt {
+  border: 1px solid rgb(138 99 255 / 45%);
+  background: transparent;
+}
+
+.VPButton.alt:hover {
+  border-color: var(--irua-accent);
+  background: rgb(138 99 255 / 8%);
+}
+
+.VPSidebarItem.is-active > .item .text,
+.VPSidebarItem.is-active > .item .link .text {
+  color: var(--vp-c-brand-1);
+}
+
+.vp-doc .custom-block.tip {
+  border-color: var(--irua-accent);
+}
+
+/* ============================================================
+   Doc pages — starlit manual styling (readability first)
+   ============================================================ */
+
+/* Section headings with a star ornament + gradient divider */
+.vp-doc h2 {
+  position: relative;
+  border-top: 1px solid transparent;
+  border-image: linear-gradient(
+      90deg,
+      rgb(138 99 255 / 45%),
+      rgb(77 141 255 / 30%),
+      transparent 80%
+    )
+    1;
+  padding-top: 28px;
+}
+
+.vp-doc h2::after {
+  content: '✦';
+  position: absolute;
+  top: 18px;
+  left: 0;
+  font-size: 0.7em;
+  color: var(--vp-c-brand-1);
+  text-shadow: 0 0 12px rgb(138 99 255 / 60%);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.vp-doc h2 > * {
+  display: inline;
+}
+
+/* Subsection headings get a subtle gradient bullet */
+.vp-doc h3 {
+  position: relative;
+  padding-left: 18px;
+}
+
+.vp-doc h3::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #a58cff, #4d8dff);
+  box-shadow: 0 0 10px rgb(138 99 255 / 70%);
+}
+
+/* Lead blockquote → starlight callout card */
+.vp-doc blockquote {
+  position: relative;
+  border-left: 3px solid transparent;
+  border-image: linear-gradient(180deg, #a58cff, #4d8dff) 1;
+  border-radius: 0 14px 14px 0;
+  background: linear-gradient(
+    100deg,
+    rgb(138 99 255 / 12%),
+    rgb(77 141 255 / 6%) 60%,
+    transparent
+  );
+  padding: 16px 20px;
+  box-shadow: inset 0 0 0 1px rgb(138 99 255 / 12%),
+    0 6px 26px rgb(20 16 50 / 35%);
+  overflow: hidden;
+}
+
+.vp-doc blockquote::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -30px;
+  width: 130px;
+  height: 130px;
+  background: radial-gradient(circle, rgb(138 99 255 / 22%), transparent 70%);
+  pointer-events: none;
+}
+
+.vp-doc blockquote p {
+  margin: 0;
+  color: var(--vp-c-text-1);
+}
+
+/* Booth links rendered as glowing pill badges */
+.vp-doc a[href*='booth.pm'] {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(130deg, #8a63ff, #4d8dff);
+  box-shadow: 0 4px 14px rgb(110 90 255 / 30%);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.vp-doc a[href*='booth.pm']::before {
+  content: '✦';
+  font-size: 0.85em;
+}
+
+.vp-doc a[href*='booth.pm']:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+  box-shadow: 0 8px 22px rgb(110 90 255 / 42%);
+}
+
+/* Images: rounded, bordered, softly glowing */
+.vp-doc img {
+  border-radius: 14px;
+  border: 1px solid rgb(138 99 255 / 22%);
+  box-shadow: 0 14px 40px rgb(10 8 30 / 45%), 0 0 0 1px rgb(77 141 255 / 8%);
+}
+
+/* Custom blocks: glow + glass */
+.vp-doc .custom-block {
+  border-radius: 14px;
+  border-width: 1px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 30px rgb(10 8 30 / 30%);
+  position: relative;
+  overflow: hidden;
+}
+
+.vp-doc .custom-block.tip {
+  border-color: rgb(77 141 255 / 45%);
+  background: linear-gradient(
+    150deg,
+    rgb(77 141 255 / 14%),
+    rgb(138 99 255 / 6%)
+  );
+}
+
+.vp-doc .custom-block.warning {
+  border-color: rgb(255 196 90 / 45%);
+  background: linear-gradient(
+    150deg,
+    rgb(255 196 90 / 12%),
+    rgb(255 140 70 / 5%)
+  );
+}
+
+.vp-doc .custom-block.danger {
+  border-color: rgb(255 110 130 / 45%);
+  background: linear-gradient(
+    150deg,
+    rgb(255 110 130 / 12%),
+    rgb(200 60 110 / 5%)
+  );
+}
+
+.vp-doc .custom-block-title {
+  letter-spacing: 0.01em;
+}
+
+/* Tables */
+.vp-doc table {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 24px rgb(10 8 30 / 30%);
+}
+
+.vp-doc th {
+  background: linear-gradient(
+    135deg,
+    rgb(138 99 255 / 22%),
+    rgb(77 141 255 / 16%)
+  );
+  color: var(--vp-c-text-1);
+}
+
+.vp-doc tr {
+  background: transparent;
+  transition: background-color 0.2s ease;
+}
+
+.vp-doc tbody tr:hover {
+  background: rgb(138 99 255 / 8%);
+}
+
+/* Inline code + code blocks */
+.vp-doc :not(pre) > code {
+  background: rgb(138 99 255 / 14%);
+  border: 1px solid rgb(138 99 255 / 22%);
+  color: #d6ceff;
+}
+
+.vp-doc div[class*='language-'] {
+  border-radius: 12px;
+  border: 1px solid rgb(138 99 255 / 18%);
+  box-shadow: 0 8px 28px rgb(10 8 30 / 35%);
+}
+
+/* Starlit scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(138 99 255 / 55%) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #8a63ff, #4d8dff);
+  border-radius: 999px;
+  border: 2px solid var(--vp-c-bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #a58cff, #6f8bff);
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* ============================================================
+   Reduced motion — keep everything calm and static
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  body::after,
+  .VPHero .VPImage,
+  .VPHero .image-container::after,
+  .VPHero .name .clip {
+    animation: none !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
